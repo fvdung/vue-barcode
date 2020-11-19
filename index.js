@@ -1,13 +1,13 @@
 var JsBarcode = require('jsbarcode');
 
 var VueBarcode = {
-   render: function (createElement) {
-    return createElement('div', [
-      createElement(this.elementTag, {
+   render: function () {
+    return h('div', [
+      h(this.elementTag, {
         style: { display: this.valid ? undefined : 'none' },
         'class': ['vue-barcode-element']
       }),
-      createElement('div', {
+      h('div', {
         style: { display: this.valid ? 'none' : undefined }
       }, this.$slots.default),
     ]);
